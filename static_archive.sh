@@ -6,7 +6,6 @@ else
     the_domain=example.com
 fi
 
-
 if [ "$2" != "" ]; then
     the_os="$2"
 else
