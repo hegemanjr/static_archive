@@ -6,7 +6,15 @@ else
     the_domain=example.com
 fi
 
+
+if [ "$2" != "" ]; then
+    the_os="$2"
+else
+    the_os=windows
+fi
+
 echo "Domain set to $the_domain"
+echo "Filename operating system set to $the_os"
 
 wget \
     --mirror \
@@ -14,7 +22,7 @@ wget \
     --html-extension \
     --level=20 \
     --no-clobber \
-    --restrict-file-names=windows \
+    --restrict-file-names=$the_os \
     --no-check-certificate \
     --convert-links \
     -e robots=off \
